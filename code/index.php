@@ -1,13 +1,9 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
 
 if (php_sapi_name() == 'cli-server') {
     $path = __DIR__ . parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);
     if (is_file($path)) {
-        return false; // Отдаем статический файл напрямую
+        return false; 
     }
 }
 
